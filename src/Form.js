@@ -5,15 +5,15 @@ export default function Form({ handleSubmit, title, setTitle, artist, setArtist,
     <div className="form">
       <form onSubmit={handleSubmit}>
         <label>
-        title
+        Song Title
           <input value={title} onChange={e => setTitle(e.target.value)} />
         </label>
         <label>
-        artist
+        Artist
           <input value={artist} onChange={e => setArtist(e.target.value)} />
         </label>
         <label>
-        color 
+        Color 
           <select value={color} onChange={e => setColor(e.target.value)} >
             <option value="honeydew">Green</option>
             <option value="lavender">Purple</option>
@@ -23,6 +23,12 @@ export default function Form({ handleSubmit, title, setTitle, artist, setArtist,
         </label>
         <button>Add to Playlist</button>
       </form>
+      <section className="album-preview">
+        <div className="album-art" style={{ background: color }}>
+          <h2>{title}</h2>
+          <p>{artist}</p>
+        </div>
+      </section>
     </div>
   );
 }

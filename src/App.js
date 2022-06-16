@@ -5,12 +5,34 @@ import Form from './Form';
 function App() {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState('lemonchiffon');
+  const [allSongs, setAllSongs] = useState([
+    {
+      title: 'All I Want Is to Be With You',
+      artist: 'John Mayer',
+      color: 'lightcyan',
+    }
+  ]);
+  // const [visibleSongs, setVisibleSongs] = useState(allSongs);
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const song = {
+      title: title,
+      artist: artist,
+      color: color,
+    };
+
+    const updatedSongs = [...allSongs, song];
+    setAllSongs(updatedSongs);
+  }
 
   return (
     <div className="App">
       <Form 
-        // handleSubmit={handleSubmit}
+        handleSubmit={handleSubmit}
         title={title}
         setTitle={setTitle}
         artist={artist}
