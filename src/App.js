@@ -7,6 +7,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
   const [color, setColor] = useState('lemonchiffon');
+  const [songFilter, setSongFilter] = useState('');
   const [allSongs, setAllSongs] = useState([
     {
       title: 'Why You No Love Me',
@@ -43,6 +44,13 @@ function App() {
     setVisibleSongs([...allSongs]);
   }
 
+  function filterSongs(songFilter) {
+    setSongFilter(songFilter);
+
+    const updatedSongs = allSongs.filter(song => song.title.includes(songFilter));
+    setVisibleSongs(updatedSongs);
+  }
+
   return (
     <div className="App">
       <Form 
@@ -54,6 +62,10 @@ function App() {
         color={color}
         setColor={setColor}
       />
+      <div>
+        Search Songs: 
+        <input value={songFilter} onChange={e => filterSongs(e.target.value)}/>
+      </div>
       <div className="song-list">
         {
           visibleSongs.map((song, i) => 

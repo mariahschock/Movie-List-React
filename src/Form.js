@@ -22,13 +22,13 @@ export default function Form({ handleSubmit, title, setTitle, artist, setArtist,
           </select>
         </label>
         <button>Add to Playlist</button>
+        <section className="album-preview">
+          <div className="album-art" style={{ background: color }}>
+            <h2>{title}</h2>
+            <p>{artist}</p>
+          </div>
+        </section>
       </form>
-      <section className="album-preview">
-        <div className="album-art" style={{ background: color }}>
-          <h2>{title}</h2>
-          <p>{artist}</p>
-        </div>
-      </section>
     </div>
   );
 }
