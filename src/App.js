@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import Form from './Form';
 
 function App() {
+  const [title, setTitle] = useState('');
+  const [artist, setArtist] = useState('');
+  const [color, setColor] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form 
+        // handleSubmit={handleSubmit}
+        title={title}
+        setTitle={setTitle}
+        artist={artist}
+        setArtist={setArtist}
+        color={color}
+        setColor={setColor}
+      />
     </div>
   );
 }
