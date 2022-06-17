@@ -55,6 +55,7 @@ function App() {
     const songIndex = allSongs.findIndex((song) => song.title === title);
     allSongs.splice(songIndex, 1);
     setVisibleSongs([...allSongs]);
+    setSongFilter('');
   }
 
   function filterSongs(songFilter) {
@@ -62,6 +63,7 @@ function App() {
 
     const updatedSongs = allSongs.filter(song => song.title.includes(songFilter));
     setVisibleSongs(updatedSongs);
+
   }
 
   return (
