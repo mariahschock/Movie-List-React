@@ -8,9 +8,14 @@ export default function Music() {
   const start = () => {
     audio.play();
   };
+  const stop = () => {
+    audio.pause();
+  };
+  
   return (
-    <div>
+    <div className="john">
       <button onClick={start}>🎵 Click Me 🎵</button>
+      <button onClick={stop}>Pause</button>
     </div>
   );
 }

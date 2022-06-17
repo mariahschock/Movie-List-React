@@ -7,9 +7,14 @@ export default function Music2() {
   const start = () => {
     audio.play();
   };
+  const stop = () => {
+    audio.pause();
+  };
+  
   return (
-    <div>
+    <div className="sheesh">
       <button onClick={start}>🎵 Click Me 🎵</button>
+      <button onClick={stop}>Pause</button>
     </div>
   );
 }

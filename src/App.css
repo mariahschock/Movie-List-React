@@ -119,3 +119,15 @@ form {
 button {
   margin:10px;
 }
+.john {
+  display: flex;
+  flex-direction: column;
+}
+.sheesh {
+  display:flex;
+  flex-direction: column;
+}
+.queen {
+  display: flex;
+  flex-direction: column;
+}
