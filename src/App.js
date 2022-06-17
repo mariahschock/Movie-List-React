@@ -1,6 +1,9 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Form from './Form';
+import Music from './Music';
+import Music2 from './Music2';
+import Music3 from './Music3';
 
 
 function App() {
@@ -13,6 +16,16 @@ function App() {
       title: 'Why You No Love Me',
       artist: 'John Mayer',
       color: 'lightcyan',
+    },
+    {
+      title: 'Sheesh!',
+      artist: 'Surfaces',
+      color: 'lemonchiffon', 
+    },
+    {
+      title: 'Bohemian Rhapsody',
+      artist: 'Queen',
+      color: 'lavender',
     }
   ]);
   const [visibleSongs, setVisibleSongs] = useState(allSongs);
@@ -62,11 +75,13 @@ function App() {
         color={color}
         setColor={setColor}
       />
-      <div>
+      <div className="filter">
         Search Songs: 
         <input value={songFilter} onChange={e => filterSongs(e.target.value)}/>
       </div>
+      
       <div className="song-list">
+    
         {
           visibleSongs.map((song, i) => 
             <div onClick={() => handleDeleteSong(song.title)}
@@ -75,10 +90,13 @@ function App() {
               <h2>{song.title}</h2> 
               <p>{song.artist}</p>
             </div>)
-      
         }
       </div>
-      
+      <div className="play-music">
+        <Music />
+        <Music2 />
+        <Music3 />
+      </div>
     </div>
   
   );
