@@ -89,6 +89,8 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family:'Courier New', Courier, monospace;
+  font-size: .8rem;
   height: 225px;
   width: 225px;
   margin: 20px;
@@ -97,7 +99,7 @@ form {
 }
 .song-list {
   background-image: url('./vinyl-background.jpg');
-  background-size: contain;
+  background-size:contain;
   margin: 20px; 
   display: flex;
   flex-wrap: wrap;

@@ -80,7 +80,7 @@ function App() {
         <input value={songFilter} onChange={e => filterSongs(e.target.value)}/>
       </div>
       
-      <div className="song-list">
+      <div className="song-list" >
     
         {
           visibleSongs.map((song, i) => 
